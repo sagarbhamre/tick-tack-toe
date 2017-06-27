@@ -1,0 +1,34 @@
+.cell {
+    width: 100px;
+    height: 100px;
+    font: 70px sans-serif;
+    text-align: center;
+    vertical-align: center;
+}
+
+.cellHilightBg {
+    background: #90EDE6;
+}
+
+.gameTable{
+	margin:0px auto;
+}
+
+.panel-heading {
+    padding: 2px 15px;
+}
+
+h2.status{
+font-size: 24px;
+font-weight: 700;
+color: #ff0000;
+}
+ h2.status input.newGame{
+color: #888;
+ }
+ .messagetxt{
+ 	margin: 0px auto;
+ 	text-align: center;
+ 	display: block;
+ }
+ 

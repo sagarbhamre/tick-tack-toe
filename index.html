@@ -1,0 +1,43 @@
+<html ng-app="mytictactoe">
+
+<head>
+<meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <script src="angular.min.js"></script>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap-theme.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" />
+    <script src="custom.js">
+    </script>
+</head>
+
+<body ng-controller="mytictactoeCtrl" class="panel panel-body">
+    <h1 class="panel-heading text-center">Tic Tac Toe</h1>
+    <label class="text-center messagetxt" ng-style="{visibility: message != null && 'visible' || 'hidden'}">{{message}}</label>
+    <p class="text-center">You Are:
+        <label>
+            <input type="radio" value="O" ng-model="player" /><strong>O</strong>
+        </label>
+        <label>
+            <input type="radio" value="X" ng-model="player" /><strong>X</strong>
+        </label>
+    </p>
+    <div>
+        <div ng-show="winner == null">
+            <h2 class="text-center" ng-show="currentPlayer == player">Your Turn</h2>
+            <h2 class="text-center" ng-show="currentPlayer != player">Program Turn</h2>
+        </div>
+        <h2 class="text-center status" ng-show="winner">Winner is {{winner}}.  <br/>
+        <input class="newGame"type="button" ng-click="newGame()" value="Reset" /></h2>
+        <div class="text-center">
+            <table border="1" class="gameTable">
+                <tr ng-repeat="row in [0,1,2]">
+                    <td ng-repeat="column in [0,1,2]" ng-click="cellClick(row,column)" ng-class="cellClass(row,column)">{{cellText(row,column)}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+ 
+</body>
+
+</html>
